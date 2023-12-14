@@ -63,3 +63,47 @@
     flex-wrap: wrap;
     gap: 20px;
 }
+
+/* ---------- */
+
+.post-item {
+    width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: rgba(0,0,0,0.50) 0px 20px 40px;
+}
+
+.post-item h2 {
+    text-align: center;
+    color: #333;
+}
+
+.post-item label {
+    display: block;
+    color: #555;
+    font-size: 22px;
+}
+
+.post-item input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 20px;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+.post-item .btn {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.post-item .btn:hover{
+    background-color: #45a049;
+}
