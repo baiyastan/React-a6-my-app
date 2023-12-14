@@ -1,16 +1,13 @@
 import "./App.css";
+import Wrapper from "./Components/Wrapper/Wrapper";
+import CreateCountry from "./Components/useEffect/CreateCountry";
 
 function App() {
-  let title = "Hello";
-  title = "Hi";
-
-  function get() {
-    alert("Hello Okurmen");
-  }
-
   return (
-    <div onClick={get} className="App">
-      {title} Aibek
+    <div className="App">
+      <Wrapper color="blue" width="200px">
+        <CreateCountry />
+      </Wrapper>
     </div>
   );
 }
