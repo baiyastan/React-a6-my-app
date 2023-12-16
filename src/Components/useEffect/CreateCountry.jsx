@@ -44,6 +44,19 @@ function CreateCountry() {
             console.log(error)
         }
     }
+
+    const handleUpdate = async () => {
+        try{
+            const res = await axios.put(`${API_URL}/${country.id}`, country)
+
+            setIsActive(false)
+            setService(true)
+            
+            console.log(res)
+        }catch (error) {
+            alert("Something wrong is server ")
+        }
+    }
     
   return (
     <div>
@@ -67,14 +80,16 @@ function CreateCountry() {
                             type='text'
                             placeholder='name' 
                             value={country.name}
+                            onChange={(e) => setCountry({...country, name: e.target.value})}
                             />
                         <input 
                             type='url' 
                             placeholder='Image url'
                             value={country.avatar}
+                            onChange={(e)=> setCountry({...country, avatar: e.target.value})}
                              />
                         <div className='btns'>
-                            <button>Submit</button>
+                            <button onClick={()=> handleUpdate()}>Submit</button>
                             <button onClick={() => setIsActive(false)}>Close</button>
                         </div>
                     </div>
