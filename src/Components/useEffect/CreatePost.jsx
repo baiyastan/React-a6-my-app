@@ -4,7 +4,7 @@ import axios from "axios"
 
 const URL = "https://656df576bcc5618d3c244f13.mockapi.io/ap/v1/country";
 
-function CreatePost() {
+function CreatePost({clicked}) {
   const [name, setName] = useState("")
   const [url, setUrl] = useState("")
 
@@ -15,6 +15,13 @@ function CreatePost() {
     }
       try {
         const response = await axios.post(URL, payload)
+
+        if(response.status === 201) {
+          alert("Success created post")
+          setName("")
+          setUrl("")
+          clicked(true)
+        }
 
         console.log(response)
 
